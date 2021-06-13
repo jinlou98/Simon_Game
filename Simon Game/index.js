@@ -57,12 +57,20 @@ function checkAnswer(currentLevel){
 
     $("body").addClass("game-over");
     setTimeout(function() {
-      $("#" + currentColour).removeClass("game-over");
+      $("body").removeClass("game-over");
     }, 200);
+
     $("h1").text("Game Over, Press Any Key to Restart");
+
+    startOver();
   }
 }
 
+function startOver(){
+  level = 0;
+  gamePattern = [];
+  started = false;
+}
 
 $(".btn").on("click", function() {
   var userChosenColour = this.id;
