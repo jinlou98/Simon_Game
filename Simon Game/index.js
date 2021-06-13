@@ -52,6 +52,14 @@ function checkAnswer(currentLevel){
     }
   } else {
     console.log("wrong");
+    var audio = new Audio("sounds/wrong.mp3");
+    audio.play();
+
+    $("body").addClass("game-over");
+    setTimeout(function() {
+      $("#" + currentColour).removeClass("game-over");
+    }, 200);
+    $("h1").text("Game Over, Press Any Key to Restart");
   }
 }
 
